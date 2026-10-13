@@ -1,0 +1,15 @@
+name = "parapid-site-preview"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = false
+rules = [{ type = "Text", globs = ["**/*.html"], fallthrough = true }]
+routes = [
+  { pattern = "parapid.com", custom_domain = true },
+  { pattern = "www.parapid.com", custom_domain = true },
+  { pattern = "preview.parapid.com", custom_domain = true },
+]
+kv_namespaces = [{ binding = "SUBMISSIONS", id = "647e4b7b410f4da489b41a2c9f63155a" }]
+send_email = [{ name = "MAIL", destination_address = "info@parapid.com" }]
+[vars]
+FROM = "web@donparapidos.com"
+TO = "info@parapid.com"
